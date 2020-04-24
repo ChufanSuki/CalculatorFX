@@ -1,0 +1,13 @@
+tr {
+    background-color: transparent;
+    padding: 0;
+}
+
+.output-container {
+    text-align: right;
+    height: 54px;
+    font-size: 2.9em;
+    background-color: #31394C;
+    color: white;
+    padding-bottom: 5px;
+}
