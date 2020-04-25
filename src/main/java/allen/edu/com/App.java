@@ -16,8 +16,7 @@ public class App extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
         Scene scene = new Scene(root);
-//        scene.getStylesheets().add("org/kordamp/bootstrapfx/bootstrapfx.css");
-//        scene.getStylesheets().addAll(this.getClass().getResource("styles.css").toExternalForm());
+        scene.getStylesheets().addAll(this.getClass().getResource("styles.css").toExternalForm());
         stage.setTitle("Calculator");
         stage.setResizable(false);
         stage.setScene(scene);

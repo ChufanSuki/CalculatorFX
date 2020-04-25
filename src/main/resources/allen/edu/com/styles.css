@@ -4,10 +4,34 @@ tr {
 }
 
 .output-container {
-    text-align: right;
-    height: 54px;
-    font-size: 2.9em;
-    background-color: #31394C;
-    color: white;
-    padding-bottom: 5px;
+    -fx-font-fill: white;
+    -fx-font-size: 2.9em;
+}
+
+.operate-button {
+    -fx-background-color: #f79e02;
+    -fx-text-fill: white;
+    -fx-text-alignment: center;
+    -fx-font-size: 2em;
+    -fx-font-weight: lighter;
+}
+
+.number-button {
+    -fx-text-fill: white;
+    -fx-font-size: 2em;
+    -fx-text-alignment: center;
+    -fx-background-color: gray;
+    -fx-font-weight: lighter;
+}
+
+.top-button {
+    -fx-text-fill: white;
+    -fx-font-size: 2em;
+    -fx-text-alignment: center;
+    -fx-background-color: #4d4b4b;
+    -fx-font-weight: lighter;
+}
+
+.root {
+    -fx-background-color: #1f1f1f;
 }

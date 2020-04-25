@@ -9,22 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 public class MainController implements Initializable {
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("Success");
-    }
-
-    private double data = 0.0;
-    private String operation = "AC";
-
-    private double readData(String input) {
-        if (input.indexOf(".") != input.length()-1) {
-            return Double.parseDouble(input);
-        }
-        return Double.parseDouble(input.substring(0,input.length()-2));
-    }
-
     @FXML
     private Button dot;
 
@@ -85,43 +69,85 @@ public class MainController implements Initializable {
     @FXML
     private Button equal;
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        AC.setText("AC");
+        output.setText("0");
+        System.out.println("Success");
+
+    }
+
+    private double data = 0.0;
+    private String operation = "AC";
+
+    private double readData(String input) {
+        if (input.indexOf(".") != input.length()-1) {
+            return Double.parseDouble(input);
+        }
+        return Double.parseDouble(input.substring(0,input.length()-2));
+    }
+
+    private String setNumber(String append) {
+        if (output.getText().equals("0"))
+            return append;
+        else
+            return output.getText()+append;
+    }
+
+
     @FXML
     public void handleButtonAction(ActionEvent event) {
+        AC.setText("C");
         if (operation.equals("Equal")) {
-            output.setText("");
+            output.setText("0");
         }
+//        if (operation.equals("Divide") || operation.equals("Multiply")
+//            || operation.equals("Plus") || operation.equals("Minus")) {
+//
+//            if (event.getSource() == divide) {
+//                operation = "Divide";
+//            } else if (event.getSource() == multiply) {
+//                operation = "Multiply";
+//            } else if (event.getSource() == minus) {
+//                operation = "Minus";
+//            } else if (event.getSource() == plus) {
+//                operation = "Plus";
+//            }
+//            return;
+//        }
+
         if (event.getSource() == one) {
-            output.setText(output.getText()+"1");
+            output.setText(setNumber("1"));
         } else if (event.getSource() == two) {
-            output.setText(output.getText()+"2");
+            output.setText(setNumber("2"));
         } else if (event.getSource() == three) {
-            output.setText(output.getText()+"3");
+            output.setText(setNumber("3"));
         } else if (event.getSource() == four) {
-            output.setText(output.getText()+"4");
+            output.setText(setNumber("4"));
         } else if (event.getSource() == five) {
-            output.setText(output.getText()+"5");
+            output.setText(setNumber("5"));
         } else if (event.getSource() == six) {
-            output.setText(output.getText()+"6");
+            output.setText(setNumber("6"));
         } else if (event.getSource() == seven) {
-            output.setText(output.getText()+"7");
+            output.setText(setNumber("7"));
         } else if (event.getSource() == eight) {
-            output.setText(output.getText()+"8");
+            output.setText(setNumber("8"));
         } else if (event.getSource() == nine) {
-            output.setText(output.getText()+"9");
+            output.setText(setNumber("9"));
         } else if (event.getSource() == zero) {
-            if (!output.getText().equals("0"))
-                output.setText(output.getText()+"0");
+            output.setText(setNumber("0"));
         } else if (event.getSource() == AC) {
-            output.setText("");
+            AC.setText("AC");
+            output.setText("0");
             operation = "AC";
         } else if (event.getSource() == divide) {
             operation = "Divide";
             data = readData(output.getText());
-            output.setText("");
+            output.setText("0");
         } else if (event.getSource() == multiply) {
             operation = "Multiply";
             data = readData(output.getText());
-            output.setText("");
+            output.setText("0");
         } else if (event.getSource() == equal) {
             double Secondhand = readData(output.getText());
             switch (operation) {
@@ -144,11 +170,11 @@ public class MainController implements Initializable {
         } else if (event.getSource() == plus) {
             operation = "Plus";
             data = readData(output.getText());
-            output.setText("");
+            output.setText("0");
         } else if (event.getSource() == minus) {
             operation = "Minus";
             data = readData(output.getText());
-            output.setText("");
+            output.setText("0");
         } else if (event.getSource() == percent) {
             operation = "Percent";
             data = readData(output.getText());
@@ -157,7 +183,7 @@ public class MainController implements Initializable {
         } else if (event.getSource() == dot) {
             output.setText(data+".");
         } else if (event.getSource() == invert) {
-            output.setText(""+output.getText());
+            output.setText("-"+output.getText());
         }
 
     }
