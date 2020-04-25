@@ -88,9 +88,9 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        final String os = System.getProperty("os.name");
-        if (os != null && os.startsWith("Mac"))
-            ;
+//        final String os = System.getProperty("os.name");
+//        if (os != null && os.startsWith("Mac"))
+//            ;
         AC.setText("AC");
         output.setText("0");
         System.out.println("Success");
@@ -120,8 +120,8 @@ public class MainController implements Initializable {
         if (event.getSource() == complex) {
             stage = (Stage) root.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("complex.fxml"));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
+            Scene scene2 = new Scene(root);
+            stage.setScene(scene2);
             stage.show();
         }
 
