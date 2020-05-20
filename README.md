@@ -9,6 +9,6 @@ Build a JavaFX Calculator for homework
 
 ## Demo
 
-![Basic view](demo/Basic.png)
+![Basic view](NaiveCalculator/demo/Basic.png)
 
-![Scientific view](demo/Scientific.png)
+![Scientific view](NaiveCalculator/demo/Scientific.png)
